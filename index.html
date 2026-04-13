@@ -253,7 +253,7 @@
       return;
     }
 
-    var MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_URL_HERE';
+    var MAILCHIMP_URL = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
 
     var form = document.createElement('form');
     form.method = 'POST';
@@ -270,6 +270,18 @@
     emailField.name = 'EMAIL';
     emailField.value = email;
     form.appendChild(emailField);
+
+    var tagField = document.createElement('input');
+    tagField.name = 'tags';
+    tagField.value = '3512589';
+    form.appendChild(tagField);
+
+    var botField = document.createElement('input');
+    botField.type = 'text';
+    botField.name = 'b_9d11a72a3736b1f1dd92fdfc9_b895da0481';
+    botField.tabIndex = -1;
+    botField.value = '';
+    form.appendChild(botField);
 
     document.body.appendChild(form);
     form.submit();
