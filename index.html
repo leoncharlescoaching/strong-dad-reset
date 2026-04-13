@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Strong Dad Reset — Priority List</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111111;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 11px;
+    font-weight: 700;
+    color: #E24B4A;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-size: 18px;
+    color: #9ca3af;
+    margin-bottom: 32px;
+  }
+
+  .quote-block {
+    border-left: 3px solid #E24B4A;
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+
+  .quote-block p {
+    font-size: 16px;
+    color: #d1d5db;
+    line-height: 1.7;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 0.5px solid #333;
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #E24B4A;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 13px;
+    color: #d1d5db;
+    line-height: 1.5;
+  }
+
+  .form-box {
+    background: #1a1a1a;
+    border: 0.5px solid #333;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+
+  .form-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ca3af;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .field {
+    margin-bottom: 14px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    background: #111111;
+    border: 0.5px solid #444;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input::placeholder { color: #4b5563; }
+  input:focus { border-color: #E24B4A; }
+
+  button {
+    width: 100%;
+    background: #E24B4A;
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 900;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+
+  button:hover { background: #c0392b; }
+
+  .small-print {
+    font-size: 12px;
+    color: #4b5563;
+    text-align: center;
+  }
+
+  .success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .success p {
+    font-size: 15px;
+    color: #9ca3af;
+    line-height: 1.6;
+  }
+
+  .success .tick {
+    width: 56px;
+    height: 56px;
+    background: #E24B4A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <p class="brand">LEON CHARLES COACHING</p>
+
+  <h1>The Strong Dad Reset</h1>
+  <p class="tagline">From stuck to structured in 8 weeks.</p>
+
+  <div class="quote-block">
+    <p>You used to be in shape. You know what to do. But somewhere between the job, the kids, and real life — it stopped happening. The Strong Dad Reset is 8 weeks of no-bullshit structure to get your body, energy, and confidence back.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <p class="card-label">PRIORITY ACCESS</p>
+      <p>First to know when spaces open. Early bird pricing locked in for you.</p>
+    </div>
+    <div class="card">
+      <p class="card-label">EXCLUSIVE INFO</p>
+      <p>Full program details, what's included, and exactly what to expect — before anyone else.</p>
+    </div>
+  </div>
+
+  <div class="form-box" id="form-box">
+    <p class="form-title">GET ON THE LIST</p>
+
+    <div class="field">
+      <label for="fname">First name</label>
+      <input type="text" id="fname" placeholder="Your first name" required />
+    </div>
+
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" placeholder="Your email address" required />
+    </div>
+
+    <button onclick="handleSubmit()">GET PRIORITY ACCESS</button>
+  </div>
+
+  <div class="success" id="success-box">
+    <div class="tick">&#10003;</div>
+    <h2>You're on the list.</h2>
+    <p>Keep an eye on your inbox. Full details, early bird pricing, and everything you need to know is coming your way before spaces open.</p>
+  </div>
+
+  <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
+
+</div>
+
+<script>
+  function handleSubmit() {
+    var fname = document.getElementById('fname').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    if (!fname || !email) {
+      alert('Please fill in your name and email.');
+      return;
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    var MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_URL_HERE';
+
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = MAILCHIMP_URL;
+    form.target = '_blank';
+    form.style.display = 'none';
+
+    var fnameField = document.createElement('input');
+    fnameField.name = 'FNAME';
+    fnameField.value = fname;
+    form.appendChild(fnameField);
+
+    var emailField = document.createElement('input');
+    emailField.name = 'EMAIL';
+    emailField.value = email;
+    form.appendChild(emailField);
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    document.getElementById('form-box').style.display = 'none';
+    document.getElementById('success-box').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
