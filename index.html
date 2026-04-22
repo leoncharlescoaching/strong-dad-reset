@@ -54,6 +54,33 @@
   .testi-quote { font-size: 15px; color: #ffffff; line-height: 1.75; margin-bottom: 16px; font-style: italic; }
   .testi-name { font-size: 12px; color: #E24B4A; font-weight: 700; letter-spacing: 1px; }
   @media (max-width: 600px) { .testi-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } .about-img-wrap { max-width: 100%; margin: 0 auto; } }
+  @media (max-width: 768px) {
+    .hero { padding: 28px 16px; }
+    h1 { font-size: 38px; }
+    .tagline { font-size: 15px; margin-bottom: 20px; }
+    .quote-block p { font-size: 14px; }
+    .cards { grid-template-columns: 1fr; }
+    .what-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
+    .marquee-img { height: 75px; }
+    .about-inner { grid-template-columns: 1fr; gap: 24px; }
+    .about-title { font-size: 28px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 26px; }
+    .results-section { padding: 36px 12px; }
+    .what-section { padding: 36px 16px; }
+    .bottom-form { padding: 36px 16px; }
+    .about-section { padding: 36px 16px; }
+    .form-box { padding: 20px 16px; }
+    .what-card { padding: 16px; }
+    .testi-card { padding: 16px; }
+    .testi-quote { font-size: 14px; }
+    .buy-now-btn { font-size: 13px; padding: 16px; letter-spacing: 0.5px; }
+    .faq-q { font-size: 14px; }
+    .faq-a { font-size: 13px; }
+    .pain-point { font-size: 14px; }
+  }
   .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
   .faq-item { border-bottom: 0.5px solid #222; padding: 20px 0; }
   .faq-item:first-child { border-top: 0.5px solid #222; }
@@ -71,12 +98,6 @@
   .about-img { width: 100%; display: block; border-radius: 8px; }
   .about-title { font-size: clamp(32px, 5vw, 52px); font-weight: 900; color: #ffffff; margin-bottom: 20px; line-height: 1; }
   .about-body { font-size: 15px; color: #d1d5db; line-height: 1.75; margin-bottom: 16px; }
-  @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } .about-img-wrap { max-width: 320px; margin: 0 auto; } }
-
-    .cards { grid-template-columns: 1fr; }
-    .what-grid { grid-template-columns: 1fr; }
-    .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-  }
   .urgency-bar { display: flex; align-items: center; justify-content: center; gap: 12px; background: #E24B4A; border: none; border-radius: 8px; padding: 18px 24px; font-size: 15px; color: #ffffff; font-weight: 900; margin-bottom: 40px; text-align: center; letter-spacing: 1px; }
   .urgency-dot { width: 10px; height: 10px; min-width: 10px; background: #E24B4A; border-radius: 50%; animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; }
