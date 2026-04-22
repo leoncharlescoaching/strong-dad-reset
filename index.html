@@ -49,7 +49,14 @@
   .what-card p { font-size: 13px; color: #ffffff; line-height: 1.5; }
   .bottom-form { background: #0a0a0a; padding: 60px 24px; }
   .bottom-inner { max-width: 720px; margin: 0 auto; }
-  @media (max-width: 520px) {
+  .about-section { background: #111111; padding: 60px 24px; }
+  .about-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 380px 1fr; gap: 48px; align-items: center; }
+  .about-img-wrap { border-radius: 8px; overflow: hidden; }
+  .about-img { width: 100%; display: block; border-radius: 8px; }
+  .about-title { font-size: clamp(32px, 5vw, 52px); font-weight: 900; color: #ffffff; margin-bottom: 20px; line-height: 1; }
+  .about-body { font-size: 15px; color: #d1d5db; line-height: 1.75; margin-bottom: 16px; }
+  @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } .about-img-wrap { max-width: 320px; margin: 0 auto; } }
+
     .cards { grid-template-columns: 1fr; }
     .what-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -135,6 +142,40 @@
       <img class="result-img" src="18.png" alt="Client result" loading="lazy">
       <img class="result-img" src="19.png" alt="Client result" loading="lazy">
       <img class="result-img" src="20.png" alt="Client result" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LEON BIO -->
+<div class="what-section">
+  <p class="section-label">YOUR COACH</p>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 32px;">
+    <img src="leon.jpg" alt="Leon Charles" style="width:100%; border-radius:8px; display:block; border:0.5px solid #222;">
+    <div>
+      <h2 style="font-size:clamp(26px,4vw,34px); font-weight:900; color:#ffffff; line-height:1.1; margin-bottom:16px;">I'm Leon. Dad. Coach. Competitive bodybuilder.</h2>
+      <p style="font-size:15px; color:#d1d5db; line-height:1.75; margin-bottom:16px;">I've spent over 7 years helping men sort their bodies out — not with generic plans, but with real coaching that fits around real life.</p>
+      <p style="font-size:15px; color:#d1d5db; line-height:1.75; margin-bottom:16px;">I'm a dad to two girls. I train fasted at 5am. I compete on stage. And I know what it takes to build a body you're proud of while everything else in life is pulling at you.</p>
+      <p style="font-size:15px; color:#d1d5db; line-height:1.75;">The Strong Dad Reset is built around the exact methods I use with my clients — no fluff, no fads, just the structure that actually works.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT LEON -->
+<div class="about-section">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="leon.jpg" alt="Leon Charles" class="about-img">
+    </div>
+    <div class="about-text">
+      <p class="section-label" style="text-align:left;">WHO'S COACHING YOU</p>
+      <h2 class="about-title">I'm Leon.</h2>
+      <p class="about-body">Dad of two. Competitive bodybuilder. Transformation coach with 7 years and hundreds of clients behind me.</p>
+      <p class="about-body">I know what it takes to stay in shape while holding down a job and raising kids — because I do it every day. I train fasted at 5am before the rest of the house wakes up. I don't have more hours in the day than you. I just have a better structure.</p>
+      <p class="about-body">That's exactly what I'm giving you in the Reset. No fluff. No generic plans. Just the structure that actually works for a busy dad's life.</p>
     </div>
   </div>
 </div>
