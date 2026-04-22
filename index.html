@@ -6,224 +6,95 @@
 <title>The Strong Dad Reset — Priority List</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: #111111;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-  }
-
-  .container {
-    max-width: 680px;
-    width: 100%;
-  }
-
-  .brand {
-    font-size: 11px;
-    font-weight: 700;
-    color: #E24B4A;
-    letter-spacing: 3px;
-    margin-bottom: 16px;
-  }
-
-  h1 {
-    font-size: clamp(42px, 8vw, 72px);
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-
-  .tagline {
-    font-size: 18px;
-    color: #9ca3af;
-    margin-bottom: 32px;
-  }
-
-  .quote-block {
-    border-left: 3px solid #E24B4A;
-    padding-left: 20px;
-    margin-bottom: 36px;
-  }
-
-  .quote-block p {
-    font-size: 16px;
-    color: #d1d5db;
-    line-height: 1.7;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 36px;
-  }
-
-  .card {
-    background: #1a1a1a;
-    border: 0.5px solid #333;
-    border-radius: 8px;
-    padding: 18px;
-  }
-
-  .card-label {
-    font-size: 10px;
-    font-weight: 700;
-    color: #E24B4A;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-  }
-
-  .card p {
-    font-size: 13px;
-    color: #d1d5db;
-    line-height: 1.5;
-  }
-
-  .form-box {
-    background: #1a1a1a;
-    border: 0.5px solid #333;
-    border-radius: 12px;
-    padding: 28px;
-    margin-bottom: 16px;
-  }
-
-  .form-title {
-    font-size: 11px;
-    font-weight: 700;
-    color: #9ca3af;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-
-  .field {
-    margin-bottom: 14px;
-  }
-
-  label {
-    display: block;
-    font-size: 12px;
-    color: #9ca3af;
-    margin-bottom: 6px;
-  }
-
-  input {
-    width: 100%;
-    background: #111111;
-    border: 0.5px solid #444;
-    border-radius: 6px;
-    padding: 12px 14px;
-    color: #ffffff;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
+  body { background: #111111; color: #ffffff; font-family: Arial, sans-serif; }
+  .hero { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .brand { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 20px; }
+  h1 { font-size: clamp(44px, 9vw, 76px); font-weight: 900; color: #ffffff; line-height: 1; margin-bottom: 14px; }
+  .tagline { font-size: 18px; color: #9ca3af; margin-bottom: 36px; }
+  .quote-block { border-left: 3px solid #E24B4A; padding-left: 20px; margin-bottom: 28px; }
+  .quote-block p { font-size: 16px; color: #d1d5db; line-height: 1.75; }
+  .pain-points { margin: 0 0 32px; display: flex; flex-direction: column; gap: 12px; }
+  .pain-point { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #d1d5db; line-height: 1.5; }
+  .dot { width: 6px; height: 6px; min-width: 6px; background: #E24B4A; border-radius: 50%; margin-top: 8px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
+  .card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 18px; }
+  .card-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 8px; }
+  .card p { font-size: 13px; color: #d1d5db; line-height: 1.5; }
+  .form-box { background: #1a1a1a; border: 0.5px solid #333; border-radius: 12px; padding: 28px; margin-bottom: 16px; }
+  .form-title { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: 2px; margin-bottom: 20px; }
+  .field { margin-bottom: 14px; }
+  label { display: block; font-size: 12px; color: #9ca3af; margin-bottom: 6px; }
+  input { width: 100%; background: #111111; border: 0.5px solid #444; border-radius: 6px; padding: 12px 14px; color: #ffffff; font-size: 14px; font-family: Arial, sans-serif; outline: none; transition: border-color 0.2s; }
   input::placeholder { color: #4b5563; }
   input:focus { border-color: #E24B4A; }
-
-  button {
-    width: 100%;
-    background: #E24B4A;
-    border: none;
-    border-radius: 6px;
-    padding: 16px;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 900;
-    font-family: Arial, sans-serif;
-    letter-spacing: 2px;
-    cursor: pointer;
-    margin-top: 8px;
-    transition: background 0.2s;
-  }
-
+  button { width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 16px; color: #ffffff; font-size: 13px; font-weight: 900; font-family: Arial, sans-serif; letter-spacing: 2px; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
   button:hover { background: #c0392b; }
-
-  .small-print {
-    font-size: 12px;
-    color: #4b5563;
-    text-align: center;
-  }
-
-  .success {
-    display: none;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .success h2 {
-    font-size: 28px;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 12px;
-  }
-
-  .success p {
-    font-size: 15px;
-    color: #9ca3af;
-    line-height: 1.6;
-  }
-
-  .success .tick {
-    width: 56px;
-    height: 56px;
-    background: #E24B4A;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 24px;
-    font-size: 24px;
-  }
-
-  @media (max-width: 480px) {
+  .small-print { font-size: 12px; color: #4b5563; text-align: center; }
+  .success { display: none; text-align: center; padding: 32px 20px; }
+  .success h2 { font-size: 26px; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .success p { font-size: 15px; color: #9ca3af; line-height: 1.6; }
+  .tick { width: 52px; height: 52px; background: #E24B4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 20px; font-weight: 900; color: #fff; }
+  .divider { height: 1px; background: #222; }
+  .results-section { background: #0a0a0a; padding: 60px 24px; }
+  .results-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; text-align: center; margin-bottom: 12px; }
+  .section-title { font-size: clamp(26px, 5vw, 38px); font-weight: 900; color: #ffffff; text-align: center; margin-bottom: 8px; line-height: 1.1; }
+  .section-sub { font-size: 15px; color: #9ca3af; text-align: center; margin-bottom: 40px; }
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .result-img { width: 100%; border-radius: 8px; display: block; border: 0.5px solid #222; }
+  .what-section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+  .what-card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 20px; }
+  .what-card-title { font-size: 12px; font-weight: 700; color: #E24B4A; letter-spacing: 1px; margin-bottom: 6px; }
+  .what-card p { font-size: 13px; color: #ffffff; line-height: 1.5; }
+  .bottom-form { background: #0a0a0a; padding: 60px 24px; }
+  .bottom-inner { max-width: 720px; margin: 0 auto; }
+  @media (max-width: 520px) {
     .cards { grid-template-columns: 1fr; }
+    .what-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
 
+<div class="hero">
   <p class="brand">LEON CHARLES COACHING</p>
-
   <h1>The Strong Dad Reset</h1>
   <p class="tagline">From stuck to structured in 8 weeks.</p>
 
   <div class="quote-block">
-    <p>You used to be in shape. You know what to do. But somewhere between the job, the kids, and real life — it stopped happening. The Strong Dad Reset is 8 weeks of no-bullshit structure to get your body, energy, and confidence back.</p>
+    <p>You used to be in shape. You know what to do. But somewhere between the job, the kids, and real life — it stopped happening. The weight crept on. The energy disappeared. And every time you think about sorting it out, something else gets in the way.</p>
+  </div>
+
+  <div class="pain-points">
+    <div class="pain-point"><span class="dot"></span>You're tired of looking in the mirror and not recognising yourself</div>
+    <div class="pain-point"><span class="dot"></span>You've tried before — it works for a bit, then life takes over</div>
+    <div class="pain-point"><span class="dot"></span>You don't need another plan. You need someone to hold you to it</div>
+    <div class="pain-point"><span class="dot"></span>You want to be the dad your kids see as strong — not the one who's always knackered</div>
   </div>
 
   <div class="cards">
     <div class="card">
       <p class="card-label">PRIORITY ACCESS</p>
-      <p>First to know when spaces open. Early bird pricing locked in for you.</p>
+      <p>First to know when spaces open. Early bird pricing locked in for you before anyone else gets a look in.</p>
     </div>
     <div class="card">
       <p class="card-label">EXCLUSIVE INFO</p>
-      <p>Full program details, what's included, and exactly what to expect — before anyone else.</p>
+      <p>Full programme details, what's included, and exactly what to expect — before it goes public.</p>
     </div>
   </div>
 
   <div class="form-box" id="form-box">
     <p class="form-title">GET ON THE LIST</p>
-
     <div class="field">
       <label for="fname">First name</label>
-      <input type="text" id="fname" placeholder="Your first name" required />
+      <input type="text" id="fname" placeholder="Your first name" />
     </div>
-
     <div class="field">
       <label for="email">Email address</label>
-      <input type="email" id="email" placeholder="Your email address" required />
+      <input type="email" id="email" placeholder="Your email address" />
     </div>
-
     <button onclick="handleSubmit()">GET PRIORITY ACCESS</button>
   </div>
 
@@ -234,61 +105,131 @@
   </div>
 
   <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
+</div>
 
+<div class="divider"></div>
+
+<div class="results-section">
+  <div class="results-inner">
+    <p class="section-label">THE PROOF</p>
+    <h2 class="section-title">Real men. Real results.</h2>
+    <p class="section-sub">These aren't models. They're busy guys who decided enough was enough.</p>
+    <div class="results-grid">
+      <img class="result-img" src="1.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="2.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="3.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="4.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="5.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="6.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="7.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="8.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="9.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="10.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="11.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="12.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="13.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="14.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="15.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="16.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="17.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="18.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="19.png" alt="Client result" loading="lazy">
+      <img class="result-img" src="20.png" alt="Client result" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="what-section">
+  <p class="section-label">WHAT'S INCLUDED</p>
+  <h2 class="section-title">8 weeks of actual structure.</h2>
+  <p class="section-sub">Not a PDF. Not a generic plan. Real coaching.</p>
+  <div class="what-grid">
+    <div class="what-card">
+      <p class="what-card-title">WEEKLY CHECK-INS</p>
+      <p>Every week you check in. I tell you what to adjust. Nothing gets left to guesswork.</p>
+    </div>
+    <div class="what-card">
+      <p class="what-card-title">TRAINING PLAN</p>
+      <p>Gym or home, 3, 4, or 5 days. Built around your life — not some fantasy schedule.</p>
+    </div>
+    <div class="what-card">
+      <p class="what-card-title">NUTRITION STRUCTURE</p>
+      <p>Macros that fit your life. No weighing every gram of rice. Sustainable from day one.</p>
+    </div>
+    <div class="what-card">
+      <p class="what-card-title">GROUP ACCOUNTABILITY</p>
+      <p>Dads all pushing in the same direction. That accountability is worth more than you think.</p>
+    </div>
+    <div class="what-card">
+      <p class="what-card-title">DIRECT ACCESS TO LEON</p>
+      <p>Questions, struggles, plateaus — I'm in your corner for the full 8 weeks.</p>
+    </div>
+    <div class="what-card">
+      <p class="what-card-title">A CLEAR ROAD MAP</p>
+      <p>By week 8 you'll know exactly what your body responds to and how to keep the results going.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="bottom-form">
+  <div class="bottom-inner">
+    <p class="section-label">READY TO RESET?</p>
+    <h2 class="section-title" style="margin-bottom:8px;">Get on the priority list.</h2>
+    <p class="section-sub" style="margin-bottom:32px;">Spaces are limited. Early bird is priority list only. Don't miss it.</p>
+
+    <div class="form-box" id="form-box-2" style="max-width:500px;margin:0 auto 16px;">
+      <p class="form-title">GET ON THE LIST</p>
+      <div class="field">
+        <label for="fname2">First name</label>
+        <input type="text" id="fname2" placeholder="Your first name" />
+      </div>
+      <div class="field">
+        <label for="email2">Email address</label>
+        <input type="email" id="email2" placeholder="Your email address" />
+      </div>
+      <button onclick="handleSubmit2()">GET PRIORITY ACCESS</button>
+    </div>
+
+    <div class="success" id="success-box-2">
+      <div class="tick">&#10003;</div>
+      <h2>You're on the list.</h2>
+      <p>Watch your inbox. Details are coming.</p>
+    </div>
+
+    <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
+  </div>
 </div>
 
 <script>
-  function handleSubmit() {
-    var fname = document.getElementById('fname').value.trim();
-    var email = document.getElementById('email').value.trim();
-
-    if (!fname || !email) {
-      alert('Please fill in your name and email.');
-      return;
-    }
-
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    var MAILCHIMP_URL = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
-
+  function submitToMailchimp(fname, email, formId, successId) {
+    var url = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
     var form = document.createElement('form');
-    form.method = 'POST';
-    form.action = MAILCHIMP_URL;
-    form.target = '_blank';
-    form.style.display = 'none';
-
-    var fnameField = document.createElement('input');
-    fnameField.name = 'FNAME';
-    fnameField.value = fname;
-    form.appendChild(fnameField);
-
-    var emailField = document.createElement('input');
-    emailField.name = 'EMAIL';
-    emailField.value = email;
-    form.appendChild(emailField);
-
-    var tagField = document.createElement('input');
-    tagField.name = 'tags';
-    tagField.value = '3512589';
-    form.appendChild(tagField);
-
-    var botField = document.createElement('input');
-    botField.type = 'text';
-    botField.name = 'b_9d11a72a3736b1f1dd92fdfc9_b895da0481';
-    botField.tabIndex = -1;
-    botField.value = '';
-    form.appendChild(botField);
-
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-
-    document.getElementById('form-box').style.display = 'none';
-    document.getElementById('success-box').style.display = 'block';
+    form.method = 'POST'; form.action = url; form.target = '_blank'; form.style.display = 'none';
+    var f = document.createElement('input'); f.name = 'FNAME'; f.value = fname; form.appendChild(f);
+    var e = document.createElement('input'); e.name = 'EMAIL'; e.value = email; form.appendChild(e);
+    var t = document.createElement('input'); t.name = 'tags'; t.value = '3512589'; form.appendChild(t);
+    var b = document.createElement('input'); b.type = 'text'; b.name = 'b_9d11a72a3736b1f1dd92fdfc9_b895da0481'; b.tabIndex = -1; b.value = ''; form.appendChild(b);
+    document.body.appendChild(form); form.submit(); document.body.removeChild(form);
+    document.getElementById(formId).style.display = 'none';
+    document.getElementById(successId).style.display = 'block';
+  }
+  function handleSubmit() {
+    var fn = document.getElementById('fname').value.trim();
+    var em = document.getElementById('email').value.trim();
+    if (!fn || !em) { alert('Please fill in your name and email.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email address.'); return; }
+    submitToMailchimp(fn, em, 'form-box', 'success-box');
+  }
+  function handleSubmit2() {
+    var fn = document.getElementById('fname2').value.trim();
+    var em = document.getElementById('email2').value.trim();
+    if (!fn || !em) { alert('Please fill in your name and email.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email address.'); return; }
+    submitToMailchimp(fn, em, 'form-box-2', 'success-box-2');
   }
 </script>
 
