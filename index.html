@@ -35,7 +35,8 @@
   .success p { font-size: 15px; color: #9ca3af; line-height: 1.6; }
   .tick { width: 52px; height: 52px; background: #E24B4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 20px; font-weight: 900; color: #fff; }
   .divider { height: 1px; background: #222; }
-  .results-section { background: #0a0a0a; padding: 60px 24px; }
+  .results-section { background: #111111; padding: 60px 24px; }
+  .results-grid { gap: 6px; }
   .results-inner { max-width: 1100px; margin: 0 auto; }
   .section-label { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; text-align: center; margin-bottom: 12px; }
   .section-title { font-size: clamp(26px, 5vw, 38px); font-weight: 900; color: #ffffff; text-align: center; margin-bottom: 8px; line-height: 1.1; }
@@ -61,9 +62,22 @@
     .what-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
   }
+  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; }
+  .marquee-track { display: flex; gap: 8px; animation: scroll 40s linear infinite; width: max-content; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-img { height: 120px; width: auto; border-radius: 6px; flex-shrink: 0; }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 </style>
 </head>
 <body>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <img class="marquee-img" src="1.png" alt=""><img class="marquee-img" src="2.png" alt=""><img class="marquee-img" src="3.png" alt=""><img class="marquee-img" src="4.png" alt=""><img class="marquee-img" src="5.png" alt=""><img class="marquee-img" src="6.png" alt=""><img class="marquee-img" src="7.png" alt=""><img class="marquee-img" src="8.png" alt=""><img class="marquee-img" src="9.png" alt=""><img class="marquee-img" src="10.png" alt=""><img class="marquee-img" src="11.png" alt=""><img class="marquee-img" src="12.png" alt=""><img class="marquee-img" src="13.png" alt=""><img class="marquee-img" src="14.png" alt=""><img class="marquee-img" src="15.png" alt=""><img class="marquee-img" src="16.png" alt=""><img class="marquee-img" src="17.png" alt=""><img class="marquee-img" src="18.png" alt=""><img class="marquee-img" src="19.png" alt=""><img class="marquee-img" src="20.png" alt="">
+    <img class="marquee-img" src="1.png" alt=""><img class="marquee-img" src="2.png" alt=""><img class="marquee-img" src="3.png" alt=""><img class="marquee-img" src="4.png" alt=""><img class="marquee-img" src="5.png" alt=""><img class="marquee-img" src="6.png" alt=""><img class="marquee-img" src="7.png" alt=""><img class="marquee-img" src="8.png" alt=""><img class="marquee-img" src="9.png" alt=""><img class="marquee-img" src="10.png" alt=""><img class="marquee-img" src="11.png" alt=""><img class="marquee-img" src="12.png" alt=""><img class="marquee-img" src="13.png" alt=""><img class="marquee-img" src="14.png" alt=""><img class="marquee-img" src="15.png" alt=""><img class="marquee-img" src="16.png" alt=""><img class="marquee-img" src="17.png" alt=""><img class="marquee-img" src="18.png" alt=""><img class="marquee-img" src="19.png" alt=""><img class="marquee-img" src="20.png" alt="">
+  </div>
+</div>
 
 <div class="hero">
   <p class="brand">LEON CHARLES COACHING</p>
@@ -142,22 +156,6 @@
       <img class="result-img" src="18.png" alt="Client result" loading="lazy">
       <img class="result-img" src="19.png" alt="Client result" loading="lazy">
       <img class="result-img" src="20.png" alt="Client result" loading="lazy">
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- LEON BIO -->
-<div class="what-section">
-  <p class="section-label">YOUR COACH</p>
-  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 32px;">
-    <img src="leon.jpg" alt="Leon Charles" style="width:100%; border-radius:8px; display:block; border:0.5px solid #222;">
-    <div>
-      <h2 style="font-size:clamp(26px,4vw,34px); font-weight:900; color:#ffffff; line-height:1.1; margin-bottom:16px;">I'm Leon. Dad. Coach. Competitive bodybuilder.</h2>
-      <p style="font-size:15px; color:#d1d5db; line-height:1.75; margin-bottom:16px;">I've spent over 7 years helping men sort their bodies out — not with generic plans, but with real coaching that fits around real life.</p>
-      <p style="font-size:15px; color:#d1d5db; line-height:1.75; margin-bottom:16px;">I'm a dad to two girls. I train fasted at 5am. I compete on stage. And I know what it takes to build a body you're proud of while everything else in life is pulling at you.</p>
-      <p style="font-size:15px; color:#d1d5db; line-height:1.75;">The Strong Dad Reset is built around the exact methods I use with my clients — no fluff, no fads, just the structure that actually works.</p>
     </div>
   </div>
 </div>
