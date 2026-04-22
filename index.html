@@ -48,6 +48,11 @@
   .what-card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 20px; }
   .what-card-title { font-size: 12px; font-weight: 700; color: #E24B4A; letter-spacing: 1px; margin-bottom: 6px; }
   .what-card p { font-size: 13px; color: #ffffff; line-height: 1.5; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+  .faq-item { border-bottom: 0.5px solid #222; padding: 20px 0; }
+  .faq-item:first-child { border-top: 0.5px solid #222; }
+  .faq-q { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 8px; }
+  .faq-a { font-size: 14px; color: #9ca3af; line-height: 1.7; }
   .bottom-form { background: #0a0a0a; padding: 60px 24px; }
   .bottom-inner { max-width: 720px; margin: 0 auto; }
   .about-section { background: #111111; padding: 60px 24px; }
@@ -62,7 +67,9 @@
     .what-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
   }
-  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; }
+  .urgency-bar { display: flex; align-items: center; gap: 10px; background: #1a1a1a; border: 0.5px solid #E24B4A; border-radius: 6px; padding: 10px 16px; font-size: 13px; color: #ffffff; font-weight: 700; margin-bottom: 32px; }
+  .urgency-dot { width: 8px; height: 8px; min-width: 8px; background: #E24B4A; border-radius: 50%; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; }
   .marquee-track { display: flex; gap: 8px; animation: scroll 40s linear infinite; width: max-content; }
   .marquee-track:hover { animation-play-state: paused; }
   .marquee-img { height: 120px; width: auto; border-radius: 6px; flex-shrink: 0; }
@@ -83,6 +90,10 @@
   <p class="brand">LEON CHARLES COACHING</p>
   <h1>The Strong Dad Reset</h1>
   <p class="tagline">From stuck to structured in 8 weeks.</p>
+  <div class="urgency-bar">
+    <span class="urgency-dot"></span>
+    Spaces open 29th May — priority list gets first access and early bird pricing
+  </div>
 
   <div class="quote-block">
     <p>You used to be in shape. You know what to do. But somewhere between the job, the kids, and real life — it stopped happening. The weight crept on. The energy disappeared. And every time you think about sorting it out, something else gets in the way.</p>
@@ -208,6 +219,42 @@
     <div class="what-card">
       <p class="what-card-title">A CLEAR ROAD MAP</p>
       <p>By week 8 you'll know exactly what your body responds to and how to keep the results going.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<div class="what-section">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">Got questions?</h2>
+  <p class="section-sub">Here are the ones I get asked most.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <p class="faq-q">Do I need a gym?</p>
+      <p class="faq-a">No. You get both a gym programme and a full bodyweight home programme. You pick whichever fits your situation. Both work.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How much time does it take each week?</p>
+      <p class="faq-a">Training sessions are 45–60 minutes. Check-ins take 5 minutes. It's built for dads with busy schedules — not blokes with unlimited free time.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">I've tried before and it hasn't worked. Why would this be different?</p>
+      <p class="faq-a">Because before, you were doing it alone. The difference with coached structure is that someone's in your corner when it gets hard — adjusting what needs adjusting, keeping you on track when life gets in the way. That's what makes it stick.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Will I have to give up food I enjoy?</p>
+      <p class="faq-a">No. The nutrition structure is built around your real life — not a perfect diet you can't sustain. Off-plan meals happen. We work around them.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What happens after the 8 weeks?</p>
+      <p class="faq-a">You'll know exactly what your body responds to and how to keep the results going. For the dads who want to keep pushing, there's the option to continue into one-to-one coaching.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">When do spaces open?</p>
+      <p class="faq-a">29th May. Priority list members get first access and early bird pricing. If you're not on the list, you'll pay more — or miss out entirely.</p>
     </div>
   </div>
 </div>
