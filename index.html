@@ -11,7 +11,7 @@
   .brand { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 20px; }
   h1 { font-size: clamp(44px, 9vw, 76px); font-weight: 900; color: #ffffff; line-height: 1; margin-bottom: 14px; }
   .tagline { font-size: 18px; color: #9ca3af; margin-bottom: 36px; }
-  .quote-block { border-left: 3px solid #E24B4A; padding-left: 20px; margin-bottom: 28px; }
+  .quote-block { border-left: 3px solid #E24B4A; padding-left: 20px; margin-bottom: 36px; margin-top: 8px; }
   .quote-block p { font-size: 16px; color: #d1d5db; line-height: 1.75; }
   .pain-points { margin: 0 0 32px; display: flex; flex-direction: column; gap: 12px; }
   .pain-point { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #d1d5db; line-height: 1.5; }
@@ -48,7 +48,7 @@
   .what-card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 20px; }
   .what-card-title { font-size: 12px; font-weight: 700; color: #E24B4A; letter-spacing: 1px; margin-bottom: 6px; }
   .what-card p { font-size: 13px; color: #ffffff; line-height: 1.5; }
-  .what-card p.what-card-title { color: #E24B4A; }
+  p.what-card-title { color: #E24B4A !important; }
   .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 32px; }
   .testi-card { background: #1a1a1a; border: 0.5px solid #333; border-left: 3px solid #E24B4A; border-radius: 8px; padding: 24px; }
   .testi-quote { font-size: 15px; color: #ffffff; line-height: 1.75; margin-bottom: 16px; font-style: italic; }
@@ -77,7 +77,7 @@
     .what-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
   }
-  .urgency-bar { display: flex; align-items: center; justify-content: center; gap: 12px; background: #1a1a1a; border: 2px solid #E24B4A; border-radius: 8px; padding: 16px 24px; font-size: 16px; color: #ffffff; font-weight: 900; margin-bottom: 32px; text-align: center; letter-spacing: 0.5px; box-shadow: 0 0 0 1px #E24B4A; }
+  .urgency-bar { display: flex; align-items: center; justify-content: center; gap: 12px; background: #E24B4A; border: none; border-radius: 8px; padding: 18px 24px; font-size: 15px; color: #ffffff; font-weight: 900; margin-bottom: 40px; text-align: center; letter-spacing: 1px; }
   .urgency-dot { width: 10px; height: 10px; min-width: 10px; background: #E24B4A; border-radius: 50%; animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } } { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; }
   .marquee-track { display: flex; gap: 8px; animation: scroll 40s linear infinite; width: max-content; }
