@@ -10,12 +10,14 @@
   body { background: #111111; color: #ffffff; font-family: Arial, sans-serif; width: 100%; max-width: 100vw; overflow-x: hidden; position: relative; }
 
   /* MARQUEE */
-  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; width: 100%; position: relative; }
-  .marquee-track { display: flex; gap: 8px; width: max-content; will-change: transform; }
-  .marquee-img { height: 100px; width: auto; border-radius: 6px; flex-shrink: 0; }
+  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; width: 100%; position: relative; -webkit-transform: translateZ(0); transform: translateZ(0); }
+  .marquee-track { display: flex; gap: 8px; animation: marquee-scroll 35s linear infinite; width: max-content; -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-img { height: 100px; width: auto; border-radius: 6px; flex-shrink: 0; -webkit-transform: translateZ(0); transform: translateZ(0); }
+  @keyframes marquee-scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
 
   /* HERO */
-  .hero { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px 40px; }
+  .hero { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 40px 40px; }
   .brand { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 16px; display: block; }
   h1 { font-size: clamp(36px, 8vw, 72px); font-weight: 900; color: #ffffff; line-height: 1.05; margin-bottom: 12px; }
   .tagline { font-size: 17px; color: #9ca3af; margin-bottom: 24px; }
@@ -66,7 +68,7 @@
   .section-sub { font-size: 14px; color: #9ca3af; text-align: center; margin-bottom: 32px; }
 
   /* WHAT'S INCLUDED */
-  .what-section { width: 100%; max-width: 720px; margin: 0 auto; padding: 48px 20px; }
+  .what-section { width: 100%; max-width: 900px; margin: 0 auto; padding: 48px 40px; }
   .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
   .what-card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 16px; }
   p.what-card-title { font-size: 11px; font-weight: 700; color: #E24B4A !important; letter-spacing: 1px; margin-bottom: 6px; }
@@ -95,7 +97,7 @@
 
   /* BOTTOM FORM */
   .bottom-form { background: #0a0a0a; padding: 48px 20px; width: 100%; }
-  .bottom-inner { max-width: 720px; margin: 0 auto; }
+  .bottom-inner { max-width: 900px; margin: 0 auto; }
 
   /* URGENCY */
   .urgency-dot { display: inline-block; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; margin-right: 8px; vertical-align: middle; animation: pulse 1.5s infinite; }
@@ -109,6 +111,7 @@
 
   /* MOBILE */
   @media (max-width: 768px) {
+    .marquee-track { animation-duration: 25s; }
     .marquee-img { height: 80px; }
     .cards { grid-template-columns: 1fr; }
     .what-grid { grid-template-columns: 1fr; }
@@ -136,8 +139,8 @@
   </div>
 </div>
 
-<div style="width:100%; background:#111111; text-align:center; padding: 16px 20px 0;">
-  <img src="thestrongdadresettextonly.png" alt="The Strong Dad Reset" style="max-width:620px; width:100%; display:inline-block;">
+<div style="width:100%; background:#111111; text-align:center; padding: 0; overflow:hidden;">
+  <img src="thestrongdadresettextonly.png" alt="The Strong Dad Reset" style="max-width:620px; width:100%; display:inline-block; margin-top:-12%; margin-bottom:-8%;">
 </div>
 
 <div class="hero">
@@ -146,10 +149,6 @@
   <div style="background:#E24B4A; border-radius:8px; padding:18px 24px; margin-bottom:40px; text-align:center; font-size:15px; font-weight:900; color:#ffffff; letter-spacing:1px;">
     <span style="display:inline-block; width:10px; height:10px; background:#ffffff; border-radius:50%; margin-right:10px; vertical-align:middle;"></span>
     SPACES OPEN 29TH MAY — PRIORITY LIST GETS FIRST ACCESS &amp; EARLY BIRD PRICING
-  </div>
-
-  <div class="quote-block">
-    <p>You used to be in shape. You know what to do. But somewhere between the job, the kids, and real life — it stopped happening. The weight crept on. The energy disappeared. And every time you think about sorting it out, something else gets in the way.</p>
   </div>
 
   <div class="pain-points">
@@ -296,60 +295,12 @@
       <p class="testi-name">— Caine, 38, Project Manager</p>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">"I had no understanding in the gym — didn't know what machine was what. Made some crazy changes, feeling a lot happier, different mindset, whole different vision. He's not only just a trainer. He's a great guy, easy to talk to. I would definitely recommend him to anyone looking for guidance."</p>
-      <p class="testi-name">— Cobey, 22, Utilities Engineer</p>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">"I've been working with Leon for nine months. Mini cut, 12 week weight gain, now on photoshoot prep. I can honestly say I'm in the best shape I've ever been in. My meal plan was tailor-made around my work — there was no room for error. If you want to change your lifestyle, I would highly recommend Leon."</p>
-      <p class="testi-name">— Dan, 38, Electrician</p>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">"I felt like I knew what I should be doing but it just wasn't clicking. Leon put me on a plan, checked in with me twice a week — gave me that accountability, someone in the background making sure I was ticking those boxes. I dropped 15kg in about six months. Couldn't be happier with the whole experience."</p>
+      <p class="testi-quote">"I felt like I knew what I should be doing but it just wasn't clicking. Leon put me on a plan, checked in with me twice a week — gave me that accountability, someone in the background making sure I was ticking those boxes. I dropped 15kg in about six months. Couldn't be happier."</p>
       <p class="testi-name">— Matt, 28, Health &amp; Fitness Coach</p>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">"I wanted to get in the best shape of my life for my 30th. Went from 101kg down to 87kg. In six months I achieved more than I had in my entire time training. Having a coach there when you're tempted on a Friday night — that's what makes the difference. Best shape of my life."</p>
-      <p class="testi-name">— Sam, 29, Heating Engineer</p>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">"I'm 40, I was struggling with my weight, my energy, really sluggish. Leon's helped me lose around 10kg, I've gained a lot more strength and I've got a lot more energy. If you ever have a problem with the plan, Leon's on it straight away. I would recommend him to anyone looking to lose weight, regain confidence or build muscle."</p>
+      <p class="testi-quote">"I'm 40, I was struggling with my weight, my energy, really sluggish. Leon's helped me lose around 10kg, I've gained a lot more strength and I've got a lot more energy. I would recommend him to anyone looking to lose weight, regain confidence or build muscle."</p>
       <p class="testi-name">— Jake, 40, Fabricator</p>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- FAQ -->
-<div class="what-section">
-  <p class="section-label">FAQ</p>
-  <h2 class="section-title">Got questions?</h2>
-  <p class="section-sub">Here are the ones I get asked most.</p>
-
-  <div class="faq-list">
-    <div class="faq-item">
-      <p class="faq-q">Do I need a gym?</p>
-      <p class="faq-a">No. You get both a gym programme and a full bodyweight home programme. You pick whichever fits your situation. Both work.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">How much time does it take each week?</p>
-      <p class="faq-a">Training sessions are 45–60 minutes. Check-ins take 5 minutes. It's built for dads with busy schedules — not blokes with unlimited free time.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">I've tried before and it hasn't worked. Why would this be different?</p>
-      <p class="faq-a">Because before, you were doing it alone. The difference with coached structure is that someone's in your corner when it gets hard — adjusting what needs adjusting, keeping you on track when life gets in the way. That's what makes it stick.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Will I have to give up food I enjoy?</p>
-      <p class="faq-a">No. The nutrition structure is built around your real life — not a perfect diet you can't sustain. Off-plan meals happen. We work around them.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">What happens after the 8 weeks?</p>
-      <p class="faq-a">You'll know exactly what your body responds to and how to keep the results going. For the dads who want to keep pushing, there's the option to continue into one-to-one coaching.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">When do spaces open?</p>
-      <p class="faq-a">29th May. Priority list members get first access and early bird pricing. If you're not on the list, you'll pay more — or miss out entirely.</p>
     </div>
   </div>
 </div>
@@ -418,36 +369,6 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email address.'); return; }
     submitToMailchimp(fn, em, 'form-box-2', 'success-box-2');
   }
-</script>
-
-<script>
-  // JS-driven marquee — no CSS animation, no flicker
-  (function() {
-    var track = document.querySelector('.marquee-track');
-    if (!track) return;
-    var pos = 0;
-    var speed = 0.5; // px per frame — adjust up/down to change speed
-    var halfWidth = null;
-
-    function getHalf() {
-      // half the track is one set of images (we duplicate in HTML)
-      halfWidth = track.scrollWidth / 2;
-    }
-
-    function step() {
-      if (!halfWidth) getHalf();
-      pos += speed;
-      if (pos >= halfWidth) pos = 0;
-      track.style.transform = 'translateX(-' + pos + 'px)';
-      requestAnimationFrame(step);
-    }
-
-    // Wait for images to load so scrollWidth is accurate
-    window.addEventListener('load', function() {
-      getHalf();
-      requestAnimationFrame(step);
-    });
-  })();
 </script>
 
 </body>
