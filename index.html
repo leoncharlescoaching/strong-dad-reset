@@ -4,128 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Strong Dad Reset — Priority List</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { overflow-x: hidden; width: 100%; }
-  body { background: #000000; color: #ffffff; font-family: Arial, sans-serif; width: 100%; max-width: 100vw; overflow-x: hidden; position: relative; }
+  body { background: #000000; color: #ffffff; font-family: 'Barlow', Arial, sans-serif; width: 100%; max-width: 100vw; overflow-x: hidden; }
 
   /* MARQUEE */
-  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; width: 100%; position: relative; -webkit-transform: translateZ(0); transform: translateZ(0); }
-  .marquee-track { display: flex; gap: 8px; animation: marquee-scroll 35s linear infinite; width: max-content; -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-  .marquee-track:hover { animation-play-state: paused; }
-  .marquee-img { height: 100px; width: auto; border-radius: 6px; flex-shrink: 0; -webkit-transform: translateZ(0); transform: translateZ(0); }
-  @keyframes marquee-scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+  .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 10px 0; border-bottom: 1px solid #1a1a1a; width: 100%; position: relative; }
+  .marquee-track { display: flex; gap: 6px; width: max-content; }
+  .marquee-img { height: 90px; width: auto; border-radius: 4px; flex-shrink: 0; }
+  @media (min-width: 769px) { .marquee-img { height: 110px; } }
+
+  /* LOGO */
+  .logo-wrap { width: 100%; background: #000000; text-align: center; padding: 20px 20px 0; }
+  .logo-wrap img { max-width: 660px; width: 100%; display: inline-block; }
 
   /* HERO */
-  .hero { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 40px 40px; }
-  .brand { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 16px; display: block; }
-  h1 { font-size: clamp(36px, 8vw, 72px); font-weight: 900; color: #ffffff; line-height: 1.05; margin-bottom: 12px; }
-  .tagline { font-size: 17px; color: #9ca3af; margin-bottom: 24px; }
-  .quote-block { border-left: 3px solid #E24B4A; padding-left: 16px; margin-bottom: 28px; }
-  .quote-block p { font-size: 15px; color: #d1d5db; line-height: 1.7; }
-  .pain-points { margin: 0 0 28px; display: flex; flex-direction: column; gap: 12px; }
-  .pain-point { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: #d1d5db; line-height: 1.5; }
-  .dot { width: 6px; height: 6px; min-width: 6px; background: #E24B4A; border-radius: 50%; margin-top: 8px; }
+  .hero { width: 100%; max-width: 860px; margin: 0 auto; padding: 16px 32px 48px; }
+  .tagline { font-size: 16px; color: #9ca3af; margin-bottom: 28px; line-height: 1.5; }
+  .tagline strong { color: #ffffff; }
 
-  /* CARDS */
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
-  .card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 16px; }
-  .card-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 8px; display: block; }
-  .card p { font-size: 13px; color: #d1d5db; line-height: 1.5; }
-
-  /* FORM */
-  .form-box { background: #1a1a1a; border: 0.5px solid #333; border-radius: 12px; padding: 24px 20px; margin-bottom: 16px; }
-  .form-title { font-size: 11px; font-weight: 700; color: #9ca3af; letter-spacing: 2px; margin-bottom: 18px; display: block; }
-  .field { margin-bottom: 14px; }
-  label { display: block; font-size: 12px; color: #9ca3af; margin-bottom: 6px; }
-  input { width: 100%; background: #000000; border: 0.5px solid #444; border-radius: 6px; padding: 13px 14px; color: #ffffff; font-size: 16px; font-family: Arial, sans-serif; outline: none; -webkit-appearance: none; }
-  input::placeholder { color: #4b5563; }
-  input:focus { border-color: #E24B4A; }
-  button { width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 16px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: Arial, sans-serif; letter-spacing: 1px; cursor: pointer; margin-top: 8px; -webkit-appearance: none; }
-  .small-print { font-size: 12px; color: #4b5563; text-align: center; }
-  .success { display: none; text-align: center; padding: 28px 16px; }
-  .success h2 { font-size: 24px; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
-  .success p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
-  .tick { width: 48px; height: 48px; background: #E24B4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 18px; font-weight: 900; color: #fff; }
-
-  /* BUY NOW */
-  .buy-now-wrap { display: block; margin-bottom: 20px; }
-  .buy-now-btn { display: block; width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 18px 16px; color: #ffffff; font-size: 14px; font-weight: 900; font-family: Arial, sans-serif; letter-spacing: 1px; cursor: pointer; text-align: center; text-decoration: none; }
-  .buy-now-sub { font-size: 12px; color: #9ca3af; text-align: center; margin-top: 8px; }
-
-  /* DIVIDER */
-  .divider { height: 1px; background: #222; width: 100%; }
-
-  /* RESULTS */
-  .results-section { background: #000000; padding: 48px 16px; width: 100%; }
-  .results-inner { max-width: 1100px; margin: 0 auto; }
-  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
-  .result-img { width: 100%; border-radius: 6px; display: block; }
-
-  /* SHARED SECTION STYLES */
-  .section-label { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; text-align: center; margin-bottom: 10px; display: block; }
-  .section-title { font-size: clamp(24px, 5vw, 36px); font-weight: 900; color: #ffffff; text-align: center; margin-bottom: 8px; line-height: 1.1; }
-  .section-sub { font-size: 14px; color: #9ca3af; text-align: center; margin-bottom: 32px; }
-
-  /* WHAT'S INCLUDED */
-  .what-section { width: 100%; max-width: 900px; margin: 0 auto; padding: 48px 40px; }
-  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
-  .what-card { background: #1a1a1a; border: 0.5px solid #333; border-radius: 8px; padding: 16px; }
-  p.what-card-title { font-size: 11px; font-weight: 700; color: #E24B4A !important; letter-spacing: 1px; margin-bottom: 6px; }
-  .what-card p { font-size: 13px; color: #ffffff; line-height: 1.5; }
-
-  /* ABOUT */
-  .about-section { background: #000000; padding: 48px 20px; width: 100%; }
-  .about-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 360px 1fr; gap: 40px; align-items: center; }
-  .about-img-wrap { border-radius: 8px; overflow: hidden; }
-  .about-img { width: 100%; display: block; border-radius: 8px; }
-  .about-title { font-size: clamp(28px, 5vw, 48px); font-weight: 900; color: #ffffff; margin-bottom: 16px; line-height: 1; }
-  .about-body { font-size: 15px; color: #d1d5db; line-height: 1.75; margin-bottom: 14px; }
-
-  /* TESTIMONIALS */
-  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 28px; }
-  .testi-card { background: #1a1a1a; border: 0.5px solid #333; border-left: 3px solid #E24B4A; border-radius: 8px; padding: 20px; }
-  .testi-quote { font-size: 14px; color: #ffffff; line-height: 1.7; margin-bottom: 14px; font-style: italic; }
-  .testi-name { font-size: 12px; color: #E24B4A; font-weight: 700; letter-spacing: 1px; }
-
-  /* FAQ */
-  .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
-  .faq-item { border-bottom: 0.5px solid #222; padding: 18px 0; }
-  .faq-item:first-child { border-top: 0.5px solid #222; }
-  .faq-q { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 8px; }
-  .faq-a { font-size: 14px; color: #9ca3af; line-height: 1.7; }
-
-  /* BOTTOM FORM */
-  .bottom-form { background: #0a0a0a; padding: 48px 20px; width: 100%; }
-  .bottom-inner { max-width: 900px; margin: 0 auto; }
-
-  /* URGENCY */
-  .urgency-dot { display: inline-block; width: 8px; height: 8px; background: #ffffff; border-radius: 50%; margin-right: 8px; vertical-align: middle; animation: pulse 1.5s infinite; }
+  /* URGENCY BAR */
+  .urgency-bar { background: #E24B4A; border-radius: 6px; padding: 16px 24px; margin-bottom: 36px; text-align: center; font-family: 'Barlow', sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; letter-spacing: 1.5px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .urgency-dot { width: 8px; height: 8px; background: #ffffff; border-radius: 50%; animation: pulse 1.5s infinite; flex-shrink: 0; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  /* DESKTOP — larger results grid */
+  /* PAIN POINTS */
+  .pain-points { margin: 0 0 32px; display: flex; flex-direction: column; gap: 14px; }
+  .pain-point { display: flex; align-items: flex-start; gap: 14px; font-size: 16px; color: #e5e7eb; line-height: 1.5; font-weight: 600; }
+  .dot { width: 7px; height: 7px; min-width: 7px; background: #E24B4A; border-radius: 50%; margin-top: 8px; }
+
+  /* NOT FOR YOU BLOCK */
+  .not-for-you { border: 1px solid #E24B4A; border-radius: 8px; padding: 24px 28px; margin-bottom: 36px; }
+  .not-for-you-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 14px; display: block; }
+  .not-for-you p { font-size: 15px; color: #9ca3af; line-height: 1.9; }
+  .not-for-you strong { color: #ffffff; font-weight: 700; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .card { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-radius: 8px; padding: 20px; }
+  .card-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+  .card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
+
+  /* FORM */
+  .form-box { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-radius: 10px; padding: 28px 24px; margin-bottom: 16px; }
+  .form-title { font-size: 10px; font-weight: 700; color: #9ca3af; letter-spacing: 3px; margin-bottom: 20px; display: block; }
+  .field { margin-bottom: 14px; }
+  label { display: block; font-size: 12px; color: #6b7280; margin-bottom: 6px; font-weight: 600; letter-spacing: 0.5px; }
+  input { width: 100%; background: #000000; border: 0.5px solid #333; border-radius: 6px; padding: 14px 16px; color: #ffffff; font-size: 16px; font-family: 'Barlow', sans-serif; outline: none; -webkit-appearance: none; transition: border-color 0.2s; }
+  input::placeholder { color: #374151; }
+  input:focus { border-color: #E24B4A; }
+  .submit-btn { width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 18px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 2px; cursor: pointer; margin-top: 8px; -webkit-appearance: none; transition: background 0.2s; }
+  .submit-btn:hover { background: #c73b39; }
+  .small-print { font-size: 12px; color: #374151; text-align: center; margin-top: 12px; }
+
+  /* BUY NOW */
+  .buy-now-wrap { margin-bottom: 24px; }
+  .buy-now-btn { display: block; width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 20px 16px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 1.5px; cursor: pointer; text-align: center; text-decoration: none; }
+  .buy-now-sub { font-size: 12px; color: #6b7280; text-align: center; margin-top: 10px; }
+
+  /* SUCCESS */
+  .success { display: none; text-align: center; padding: 32px 16px; }
+  .success h2 { font-size: 26px; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .success p { font-size: 15px; color: #9ca3af; line-height: 1.6; }
+  .tick { width: 52px; height: 52px; background: #E24B4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 20px; font-weight: 900; color: #fff; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: #1a1a1a; width: 100%; }
+
+  /* RESULTS */
+  .results-section { background: #000000; padding: 56px 20px; width: 100%; }
+  .results-inner { max-width: 1100px; margin: 0 auto; }
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; margin-top: 28px; }
+  .result-img { width: 100%; border-radius: 4px; display: block; }
+
+  /* SECTION LABELS */
+  .section-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 4px; text-align: center; margin-bottom: 12px; display: block; }
+  .section-title { font-family: 'Anton', sans-serif; font-size: clamp(28px, 5vw, 42px); color: #ffffff; text-align: center; margin-bottom: 8px; line-height: 1.1; text-transform: uppercase; letter-spacing: 1px; }
+  .section-sub { font-size: 15px; color: #6b7280; text-align: center; margin-bottom: 0; }
+
+  /* ABOUT */
+  .about-section { background: #000000; padding: 64px 20px; width: 100%; }
+  .about-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: center; }
+  .about-img-wrap { border-radius: 8px; overflow: hidden; }
+  .about-img { width: 100%; display: block; border-radius: 8px; }
+  .about-title { font-family: 'Anton', sans-serif; font-size: clamp(36px, 5vw, 56px); color: #ffffff; margin-bottom: 20px; line-height: 1; text-transform: uppercase; }
+  .about-body { font-size: 16px; color: #9ca3af; line-height: 1.8; margin-bottom: 16px; }
+
+  /* WHAT'S INCLUDED */
+  .what-section { width: 100%; max-width: 900px; margin: 0 auto; padding: 64px 32px; }
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+  .what-card { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-radius: 8px; padding: 20px 22px; }
+  .what-card-title { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+  .what-card p { font-size: 14px; color: #d1d5db; line-height: 1.65; }
+
+  /* TESTIMONIALS */
+  .testi-section { width: 100%; max-width: 900px; margin: 0 auto; padding: 64px 32px; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .testi-card { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-left: 3px solid #E24B4A; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .testi-quote { font-size: 14px; color: #d1d5db; line-height: 1.75; margin-bottom: 20px; font-style: italic; flex: 1; }
+  .testi-name { font-size: 13px; color: #E24B4A; font-weight: 700; letter-spacing: 1px; }
+
+  /* BOTTOM CTA */
+  .bottom-form { background: #0a0a0a; padding: 72px 20px; width: 100%; border-top: 1px solid #1a1a1a; }
+  .bottom-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+  .bottom-title { font-family: 'Anton', sans-serif; font-size: clamp(32px, 5vw, 52px); color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .bottom-sub { font-size: 15px; color: #6b7280; margin-bottom: 36px; line-height: 1.6; }
+
+  /* DESKTOP */
   @media (min-width: 769px) {
     .results-grid { grid-template-columns: repeat(4, 1fr); }
-    .marquee-img { height: 120px; }
   }
 
   /* MOBILE */
   @media (max-width: 768px) {
-    .marquee-track { animation-duration: 25s; }
-    .marquee-img { height: 80px; }
+    .hero { padding: 12px 20px 40px; }
     .cards { grid-template-columns: 1fr; }
     .what-grid { grid-template-columns: 1fr; }
-    .about-inner { grid-template-columns: 1fr; gap: 20px; }
-    .about-img-wrap { max-width: 100%; }
     .testi-grid { grid-template-columns: 1fr; }
-    .results-section { padding: 32px 10px; }
-    .what-section { padding: 32px 16px; }
-    .about-section { padding: 32px 16px; }
-    .bottom-form { padding: 32px 16px; }
-    .hero { padding: 0 16px 32px; }
-    .tagline { font-size: 15px; }
-    .quote-block p { font-size: 14px; }
-    .pain-point { font-size: 14px; }
+    .about-inner { grid-template-columns: 1fr; gap: 28px; }
+    .results-section { padding: 40px 12px; }
+    .what-section { padding: 48px 20px; }
+    .testi-section { padding: 48px 20px; }
+    .about-section { padding: 48px 20px; }
+    .bottom-form { padding: 56px 20px; }
+    .not-for-you { padding: 20px; }
+    .urgency-bar { font-size: 13px; }
   }
 </style>
 </head>
@@ -133,21 +138,23 @@
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
-  <div class="marquee-track">
+  <div class="marquee-track" id="marquee-track">
     <img class="marquee-img" src="1.png" alt=""><img class="marquee-img" src="2.png" alt=""><img class="marquee-img" src="3.png" alt=""><img class="marquee-img" src="4.png" alt=""><img class="marquee-img" src="5.png" alt=""><img class="marquee-img" src="6.png" alt=""><img class="marquee-img" src="7.png" alt=""><img class="marquee-img" src="8.png" alt=""><img class="marquee-img" src="9.png" alt=""><img class="marquee-img" src="10.png" alt=""><img class="marquee-img" src="11.png" alt=""><img class="marquee-img" src="12.png" alt=""><img class="marquee-img" src="13.png" alt=""><img class="marquee-img" src="14.png" alt=""><img class="marquee-img" src="15.png" alt=""><img class="marquee-img" src="16.png" alt=""><img class="marquee-img" src="17.png" alt=""><img class="marquee-img" src="18.png" alt=""><img class="marquee-img" src="19.png" alt=""><img class="marquee-img" src="20.png" alt="">
     <img class="marquee-img" src="1.png" alt=""><img class="marquee-img" src="2.png" alt=""><img class="marquee-img" src="3.png" alt=""><img class="marquee-img" src="4.png" alt=""><img class="marquee-img" src="5.png" alt=""><img class="marquee-img" src="6.png" alt=""><img class="marquee-img" src="7.png" alt=""><img class="marquee-img" src="8.png" alt=""><img class="marquee-img" src="9.png" alt=""><img class="marquee-img" src="10.png" alt=""><img class="marquee-img" src="11.png" alt=""><img class="marquee-img" src="12.png" alt=""><img class="marquee-img" src="13.png" alt=""><img class="marquee-img" src="14.png" alt=""><img class="marquee-img" src="15.png" alt=""><img class="marquee-img" src="16.png" alt=""><img class="marquee-img" src="17.png" alt=""><img class="marquee-img" src="18.png" alt=""><img class="marquee-img" src="19.png" alt=""><img class="marquee-img" src="20.png" alt="">
   </div>
 </div>
 
-<div style="width:100%; background:#000000; text-align:center; padding: 20px 0 8px;">
-  <img src="The_Strong_Dad_Reset_.png" alt="The Strong Dad Reset" style="max-width:700px; width:100%; display:inline-block;">
+<!-- LOGO -->
+<div class="logo-wrap">
+  <img src="The_Strong_Dad_Reset_.png" alt="The Strong Dad Reset">
 </div>
 
+<!-- HERO -->
 <div class="hero">
-  <h1 style="display:none;">The Strong Dad Reset</h1>
-  <p class="tagline">8 weeks of structured training and accountability. Not a diet plan. Not a quick fix. Hard work, done properly.</p>
-  <div style="background:#E24B4A; border-radius:8px; padding:18px 24px; margin-bottom:40px; text-align:center; font-size:15px; font-weight:900; color:#ffffff; letter-spacing:1px;">
-    <span style="display:inline-block; width:10px; height:10px; background:#ffffff; border-radius:50%; margin-right:10px; vertical-align:middle;"></span>
+  <p class="tagline"><strong>Not a diet plan. Not a quick fix.</strong> 8 weeks of structured training and real accountability — built for dads who are ready to put the work in.</p>
+
+  <div class="urgency-bar">
+    <span class="urgency-dot"></span>
     SPACES OPEN 29TH MAY — PRIORITY LIST GETS FIRST ACCESS &amp; EARLY BIRD PRICING
   </div>
 
@@ -158,30 +165,29 @@
     <div class="pain-point"><span class="dot"></span>You want to be the dad your kids see as strong — not the one who's always knackered</div>
   </div>
 
-  <div style="background:#1a1a1a; border: 0.5px solid #333; border-left: 3px solid #E24B4A; border-radius:8px; padding:20px 24px; margin-bottom:28px;">
-    <p style="font-size:11px; font-weight:700; color:#E24B4A; letter-spacing:2px; margin-bottom:12px;">THIS IS NOT FOR YOU IF</p>
-    <p style="font-size:14px; color:#9ca3af; line-height:1.8;">You're looking for a magic pill. You want someone to do the work for you. You're not willing to train at least 3 days a week. You give up the moment it gets hard.<br><br><strong style="color:#ffffff;">If that's you — this isn't for you. No hard feelings.</strong></p>
+  <div class="not-for-you">
+    <span class="not-for-you-label">THIS IS NOT FOR YOU IF</span>
+    <p>You're looking for a magic pill. You want someone to do the work for you. You're not willing to train at least 3 days a week. You give up the moment it gets hard.<br><br><strong>If that's you — this isn't for you. No hard feelings.</strong></p>
   </div>
 
   <div class="cards">
     <div class="card">
-      <p class="card-label">PRIORITY ACCESS</p>
-      <p>First to know when spaces open. Early bird pricing locked in for you before anyone else gets a look in.</p>
+      <span class="card-label">PRIORITY ACCESS</span>
+      <p>First to know when spaces open. Early bird pricing locked in before anyone else gets a look in.</p>
     </div>
     <div class="card">
-      <p class="card-label">EXCLUSIVE INFO</p>
+      <span class="card-label">EXCLUSIVE INFO</span>
       <p>Full programme details, what's included, and exactly what to expect — before it goes public.</p>
     </div>
   </div>
 
-  <!-- BUY NOW BUTTON — change display:none to display:block on 29th May -->
   <div class="buy-now-wrap" id="buy-now">
-    <div class="buy-now-btn" style="opacity:0.6; cursor:not-allowed;">SPACES OPEN 29TH MAY — COMING SOON</div>
-    <p class="buy-now-sub">Get on the priority list below to get first access and early bird pricing.</p>
+    <div class="buy-now-btn" style="opacity:0.5; cursor:not-allowed;">SPACES OPEN 29TH MAY — COMING SOON</div>
+    <p class="buy-now-sub">Get on the priority list below for first access and early bird pricing.</p>
   </div>
 
   <div class="form-box" id="form-box">
-    <p class="form-title">GET ON THE LIST</p>
+    <span class="form-title">GET ON THE LIST</span>
     <div class="field">
       <label for="fname">First name</label>
       <input type="text" id="fname" placeholder="Your first name" />
@@ -190,13 +196,13 @@
       <label for="email">Email address</label>
       <input type="email" id="email" placeholder="Your email address" />
     </div>
-    <button onclick="handleSubmit()">GET PRIORITY ACCESS</button>
+    <button class="submit-btn" onclick="handleSubmit()">GET PRIORITY ACCESS</button>
   </div>
 
   <div class="success" id="success-box">
     <div class="tick">&#10003;</div>
     <h2>You're on the list.</h2>
-    <p>Keep an eye on your inbox. Full details, early bird pricing, and everything you need to know is coming your way before spaces open.</p>
+    <p>Keep an eye on your inbox. Full details, early bird pricing, and everything you need to know is on its way.</p>
   </div>
 
   <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
@@ -204,9 +210,10 @@
 
 <div class="divider"></div>
 
+<!-- RESULTS -->
 <div class="results-section">
   <div class="results-inner">
-    <p class="section-label">THE PROOF</p>
+    <span class="section-label">THE PROOF</span>
     <h2 class="section-title">Real men. Real results.</h2>
     <p class="section-sub">These aren't models. They're busy guys who decided enough was enough.</p>
     <div class="results-grid">
@@ -243,7 +250,7 @@
       <img src="leon.jpg" alt="Leon Charles" class="about-img">
     </div>
     <div class="about-text">
-      <p class="section-label" style="text-align:left;">WHO'S COACHING YOU</p>
+      <span class="section-label" style="text-align:left;">WHO'S COACHING YOU</span>
       <h2 class="about-title">I'm Leon.</h2>
       <p class="about-body">Dad of two. Competitive bodybuilder. Transformation coach with 7 years and hundreds of clients behind me.</p>
       <p class="about-body">I know what it takes to stay in shape while holding down a job and raising kids — because I do it every day. I train fasted at 5am before the rest of the house wakes up. I don't have more hours in the day than you. I just have a better structure.</p>
@@ -254,33 +261,34 @@
 
 <div class="divider"></div>
 
+<!-- WHAT'S INCLUDED -->
 <div class="what-section">
-  <p class="section-label">WHAT'S INCLUDED</p>
+  <span class="section-label">WHAT'S INCLUDED</span>
   <h2 class="section-title">8 weeks of actual structure.</h2>
-  <p class="section-sub">Not a PDF. Not a generic plan. Real coaching.</p>
+  <p class="section-sub" style="margin-bottom:0;">Not a PDF. Not a generic plan. Real coaching.</p>
   <div class="what-grid">
     <div class="what-card">
-      <p class="what-card-title">WEEKLY CHECK-INS</p>
+      <span class="what-card-title">WEEKLY CHECK-INS</span>
       <p>Every week you check in. I tell you what to adjust. Nothing gets left to guesswork.</p>
     </div>
     <div class="what-card">
-      <p class="what-card-title">TRAINING PLAN</p>
+      <span class="what-card-title">TRAINING PLAN</span>
       <p>Gym or home, 3, 4, or 5 days. Built around your life — not some fantasy schedule.</p>
     </div>
     <div class="what-card">
-      <p class="what-card-title">NUTRITION STRUCTURE</p>
+      <span class="what-card-title">NUTRITION STRUCTURE</span>
       <p>Macros that fit your life. No weighing every gram of rice. Sustainable from day one.</p>
     </div>
     <div class="what-card">
-      <p class="what-card-title">GROUP ACCOUNTABILITY</p>
+      <span class="what-card-title">GROUP ACCOUNTABILITY</span>
       <p>Dads all pushing in the same direction. That accountability is worth more than you think.</p>
     </div>
     <div class="what-card">
-      <p class="what-card-title">DIRECT ACCESS TO LEON</p>
+      <span class="what-card-title">DIRECT ACCESS TO LEON</span>
       <p>Questions, struggles, plateaus — I'm in your corner for the full 8 weeks.</p>
     </div>
     <div class="what-card">
-      <p class="what-card-title">A CLEAR ROAD MAP</p>
+      <span class="what-card-title">A CLEAR ROAD MAP</span>
       <p>By week 8 you'll know exactly what your body responds to and how to keep the results going.</p>
     </div>
   </div>
@@ -289,43 +297,42 @@
 <div class="divider"></div>
 
 <!-- TESTIMONIALS -->
-<div class="what-section">
-  <p class="section-label">WHAT THEY SAID</p>
+<div class="testi-section">
+  <span class="section-label">WHAT THEY SAID</span>
   <h2 class="section-title">From the lads who did it.</h2>
   <p class="section-sub">Real words. Not made up.</p>
-
   <div class="testi-grid">
     <div class="testi-card">
-      <p class="testi-quote">"I was doing all the diets myself, hammering cardio, and just hoping I'd get the results. When I first started with Leon my mindset completely changed. I had someone pushing me, someone to report back to. The most surprising thing was it didn't change my lifestyle — it just slipped into it."</p>
-      <p class="testi-name">— Caine, 38, Project Manager</p>
+      <p class="testi-quote">"I was doing all the diets myself, hammering cardio, and just hoping I'd get the results. When I first started with Leon my mindset completely changed. The most surprising thing was it didn't change my lifestyle — it just slipped into it."</p>
+      <p class="testi-name">CAINE, 38 — PROJECT MANAGER</p>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">"I felt like I knew what I should be doing but it just wasn't clicking. Leon put me on a plan, checked in with me twice a week — gave me that accountability, someone in the background making sure I was ticking those boxes. I dropped 15kg in about six months. Couldn't be happier."</p>
-      <p class="testi-name">— Matt, 28, Health &amp; Fitness Coach</p>
+      <p class="testi-quote">"Leon put me on a plan, checked in twice a week — gave me that accountability, someone in the background making sure I was ticking those boxes. I dropped 15kg in about six months. Couldn't be happier."</p>
+      <p class="testi-name">MATT, 28 — HEALTH &amp; FITNESS COACH</p>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">"I'm 40, I was struggling with my weight, my energy, really sluggish. Leon's helped me lose around 10kg, I've gained a lot more strength and I've got a lot more energy. I would recommend him to anyone looking to lose weight, regain confidence or build muscle."</p>
-      <p class="testi-name">— Jake, 40, Fabricator</p>
+      <p class="testi-quote">"I'm 40, I was struggling with my weight, my energy, really sluggish. Leon's helped me lose around 10kg, I've gained a lot more strength and I've got a lot more energy. I would recommend him to anyone."</p>
+      <p class="testi-name">JAKE, 40 — FABRICATOR</p>
     </div>
   </div>
 </div>
 
 <div class="divider"></div>
 
+<!-- BOTTOM CTA -->
 <div class="bottom-form">
   <div class="bottom-inner">
-    <p class="section-label">READY TO RESET?</p>
-    <h2 class="section-title" style="margin-bottom:8px;">Get on the priority list.</h2>
-    <p class="section-sub" style="margin-bottom:32px;">Spaces are limited. Early bird is priority list only. Don't miss it.</p>
+    <span class="section-label">READY TO RESET?</span>
+    <h2 class="bottom-title">Get on the<br><span style="color:#E24B4A;">priority list.</span></h2>
+    <p class="bottom-sub">Spaces are limited. Early bird is priority list only.<br>Don't miss it.</p>
 
-    <!-- BUY NOW BUTTON — change display:none to display:block on 29th May -->
     <div class="buy-now-wrap">
-      <div class="buy-now-btn" style="opacity:0.6; cursor:not-allowed;">SPACES OPEN 29TH MAY — COMING SOON</div>
-      <p class="buy-now-sub">Get on the priority list below to get first access and early bird pricing.</p>
+      <div class="buy-now-btn" style="opacity:0.5; cursor:not-allowed;">SPACES OPEN 29TH MAY — COMING SOON</div>
+      <p class="buy-now-sub">Get on the list below for first access and early bird pricing.</p>
     </div>
 
-    <div class="form-box" id="form-box-2" style="max-width:500px;margin:0 auto 16px;">
-      <p class="form-title">GET ON THE LIST</p>
+    <div class="form-box" id="form-box-2">
+      <span class="form-title">SECURE YOUR SPOT</span>
       <div class="field">
         <label for="fname2">First name</label>
         <input type="text" id="fname2" placeholder="Your first name" />
@@ -334,7 +341,7 @@
         <label for="email2">Email address</label>
         <input type="email" id="email2" placeholder="Your email address" />
       </div>
-      <button onclick="handleSubmit2()">GET PRIORITY ACCESS</button>
+      <button class="submit-btn" onclick="handleSubmit2()">GET PRIORITY ACCESS</button>
     </div>
 
     <div class="success" id="success-box-2">
@@ -348,6 +355,26 @@
 </div>
 
 <script>
+  // JS marquee — no flicker
+  (function() {
+    var track = document.getElementById('marquee-track');
+    if (!track) return;
+    var pos = 0;
+    var speed = 0.5;
+    var halfWidth = null;
+    function step() {
+      if (!halfWidth) halfWidth = track.scrollWidth / 2;
+      pos += speed;
+      if (pos >= halfWidth) pos = 0;
+      track.style.transform = 'translateX(-' + pos + 'px)';
+      requestAnimationFrame(step);
+    }
+    window.addEventListener('load', function() {
+      halfWidth = track.scrollWidth / 2;
+      requestAnimationFrame(step);
+    });
+  })();
+
   function submitToMailchimp(fname, email, formId, successId) {
     var url = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
     var form = document.createElement('form');
