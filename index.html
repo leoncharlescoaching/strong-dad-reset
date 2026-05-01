@@ -11,13 +11,13 @@
 
   /* MARQUEE */
   .marquee-wrap { overflow: hidden; background: #0a0a0a; padding: 12px 0; border-bottom: 1px solid #222; width: 100%; position: relative; }
-  .marquee-track { display: flex; gap: 8px; animation: scroll 50s linear infinite; width: max-content; will-change: transform; }
+  .marquee-track { display: flex; gap: 8px; animation: scroll 50s linear infinite; width: max-content; will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
   .marquee-track:hover { animation-play-state: paused; }
   .marquee-img { height: 100px; width: auto; border-radius: 6px; flex-shrink: 0; }
   @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
   /* HERO */
-  .hero { width: 100%; max-width: 720px; margin: 0 auto; padding: 20px 20px 40px; }
+  .hero { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px 40px; }
   .brand { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 16px; display: block; }
   h1 { font-size: clamp(36px, 8vw, 72px); font-weight: 900; color: #ffffff; line-height: 1.05; margin-bottom: 12px; }
   .tagline { font-size: 17px; color: #9ca3af; margin-bottom: 24px; }
