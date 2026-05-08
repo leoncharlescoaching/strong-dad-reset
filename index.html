@@ -381,36 +381,35 @@
     btn.disabled = true;
     btn.textContent = 'ADDING YOU TO THE LIST...';
 
-    var iframeName = 'mc_iframe_' + Date.now();
-    var iframe = document.createElement('iframe');
-    iframe.name = iframeName;
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
+    // Build Mailchimp URL with all fields as query params
+    var baseUrl = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post-json?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
+    
+    var script = document.createElement('script');
+    var callbackName = 'mc_callback_' + Date.now();
+    
+    window[callbackName] = function(data) {
+      document.getElementById(formId).style.display = 'none';
+      document.getElementById(successId).style.display = 'block';
+      document.body.removeChild(script);
+      delete window[callbackName];
+    };
 
-    var form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
-    form.target = iframeName;
-    form.style.display = 'none';
+    var params = '&EMAIL=' + encodeURIComponent(email) + 
+                 '&FNAME=' + encodeURIComponent(fname) +
+                 '&MERGE1=' + encodeURIComponent(fname) +
+                 '&tags=3512589' +
+                 '&b_9d11a72a3736b1f1dd92fdfc9_b895da0481=' +
+                 '&c=' + callbackName;
 
-    var fields = {FNAME: fname, MERGE1: fname, EMAIL: email, tags: '3512589', b_9d11a72a3736b1f1dd92fdfc9_b895da0481: ''};
-    Object.keys(fields).forEach(function(key) {
-      var input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = fields[key];
-      form.appendChild(input);
-    });
-
-    document.body.appendChild(form);
-    form.submit();
-
+    script.src = baseUrl + params;
+    
+    // Show success after 2 seconds regardless
     setTimeout(function() {
       document.getElementById(formId).style.display = 'none';
       document.getElementById(successId).style.display = 'block';
-      document.body.removeChild(form);
-      document.body.removeChild(iframe);
-    }, 1500);
+    }, 2000);
+
+    document.body.appendChild(script);
   }
 
   function handleSubmit() {
