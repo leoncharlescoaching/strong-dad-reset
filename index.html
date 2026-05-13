@@ -44,7 +44,7 @@
   .form-title { font-size: 10px; font-weight: 700; color: #9ca3af; letter-spacing: 3px; margin-bottom: 20px; display: block; }
   .field { margin-bottom: 14px; }
   label { display: block; font-size: 12px; color: #6b7280; margin-bottom: 6px; font-weight: 600; letter-spacing: 0.5px; }
-  input { width: 100%; background: #000000; border: 0.5px solid #333; border-radius: 6px; padding: 14px 16px; color: #ffffff; font-size: 16px; font-family: 'Barlow', sans-serif; outline: none; -webkit-appearance: none; transition: border-color 0.2s; }
+  input[type="text"], input[type="email"] { width: 100%; background: #000000; border: 0.5px solid #333; border-radius: 6px; padding: 14px 16px; color: #ffffff; font-size: 16px; font-family: 'Barlow', sans-serif; outline: none; -webkit-appearance: none; transition: border-color 0.2s; }
   input::placeholder { color: #374151; }
   input:focus { border-color: #E24B4A; }
   .submit-btn { width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 18px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 2px; cursor: pointer; margin-top: 8px; -webkit-appearance: none; transition: background 0.2s; }
@@ -118,6 +118,9 @@
 </head>
 <body>
 
+<!-- Hidden iframe to catch Mailchimp POST response without redirect -->
+<iframe name="mc-iframe" style="display:none;"></iframe>
+
 <div class="marquee-wrap">
   <div class="marquee-track" id="marquee-track">
     <img class="marquee-img" src="1.png" alt=""><img class="marquee-img" src="2.png" alt=""><img class="marquee-img" src="3.png" alt=""><img class="marquee-img" src="4.png" alt=""><img class="marquee-img" src="5.png" alt=""><img class="marquee-img" src="6.png" alt=""><img class="marquee-img" src="7.png" alt=""><img class="marquee-img" src="8.png" alt=""><img class="marquee-img" src="9.png" alt=""><img class="marquee-img" src="10.png" alt=""><img class="marquee-img" src="11.png" alt=""><img class="marquee-img" src="12.png" alt=""><img class="marquee-img" src="13.png" alt=""><img class="marquee-img" src="14.png" alt=""><img class="marquee-img" src="15.png" alt=""><img class="marquee-img" src="16.png" alt=""><img class="marquee-img" src="17.png" alt=""><img class="marquee-img" src="18.png" alt=""><img class="marquee-img" src="19.png" alt=""><img class="marquee-img" src="20.png" alt="">
@@ -166,7 +169,13 @@
   </div>
 
   <div class="form-box">
-    <form id="lead-form-1" onsubmit="handleSubmit(event); return false;">
+    <form
+      id="lead-form-1"
+      action="https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&amp;id=b895da0481&amp;f_id=003f8ce3f0"
+      method="post"
+      target="mc-iframe"
+      onsubmit="handleSubmit(event, 'lead-form-1', 'success-box', 'submit-btn-1')"
+    >
       <span class="form-title">GET ON THE LIST</span>
       <div class="field">
         <label for="fname">First name</label>
@@ -175,6 +184,11 @@
       <div class="field">
         <label for="email">Email address</label>
         <input type="email" name="EMAIL" id="email" placeholder="Your email address" required>
+      </div>
+      <!-- Mailchimp tag and honeypot -->
+      <input type="hidden" name="tags" value="3512589">
+      <div style="position:absolute;left:-5000px;" aria-hidden="true">
+        <input type="text" name="b_9d11a72a3736b1f1dd92fdfc9_b895da0481" tabindex="-1" value="">
       </div>
       <button type="submit" class="submit-btn" id="submit-btn-1">GET PRIORITY ACCESS</button>
     </form>
@@ -308,7 +322,13 @@
     </div>
 
     <div class="form-box">
-      <form id="lead-form-2" onsubmit="handleSubmit2(event); return false;">
+      <form
+        id="lead-form-2"
+        action="https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&amp;id=b895da0481&amp;f_id=003f8ce3f0"
+        method="post"
+        target="mc-iframe"
+        onsubmit="handleSubmit(event, 'lead-form-2', 'success-box-2', 'submit-btn-2')"
+      >
         <span class="form-title">SECURE YOUR SPOT</span>
         <div class="field">
           <label for="fname2">First name</label>
@@ -317,6 +337,11 @@
         <div class="field">
           <label for="email2">Email address</label>
           <input type="email" name="EMAIL" id="email2" placeholder="Your email address" required>
+        </div>
+        <!-- Mailchimp tag and honeypot -->
+        <input type="hidden" name="tags" value="3512589">
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_9d11a72a3736b1f1dd92fdfc9_b895da0481" tabindex="-1" value="">
         </div>
         <button type="submit" class="submit-btn" id="submit-btn-2">GET PRIORITY ACCESS</button>
       </form>
@@ -333,14 +358,13 @@
 </div>
 
 <script>
+  // Marquee animation
   (function() {
     var track = document.getElementById('marquee-track');
     if (!track) return;
-
     var pos = 0;
     var speed = 0.5;
     var halfWidth = null;
-
     function step() {
       if (!halfWidth) halfWidth = track.scrollWidth / 2;
       pos += speed;
@@ -348,107 +372,32 @@
       track.style.transform = 'translateX(-' + pos + 'px)';
       requestAnimationFrame(step);
     }
-
     window.addEventListener('load', function() {
       halfWidth = track.scrollWidth / 2;
       requestAnimationFrame(step);
     });
   })();
 
-  function submitToMailchimp(fname, email, formId, successId, btnId) {
+  // Form submission - direct POST to Mailchimp via hidden iframe
+  // No JavaScript trickery - the form POSTs natively, iframe catches the response
+  // This is the most reliable method for capturing all fields including FNAME
+  function handleSubmit(event, formId, successId, btnId) {
     var btn = document.getElementById(btnId);
     var form = document.getElementById(formId);
     var success = document.getElementById(successId);
 
-    if (!btn || !form || !success) return;
-
     btn.disabled = true;
     btn.textContent = 'ADDING YOU TO THE LIST...';
 
-    var baseUrl = 'https://lookgoodfitness.us5.list-manage.com/subscribe/post-json?u=9d11a72a3736b1f1dd92fdfc9&id=b895da0481&f_id=003f8ce3f0';
-    var callbackName = 'mc_callback_' + Date.now();
-    var script = document.createElement('script');
-
-    var finished = false;
-
-    function showSuccess() {
-      if (finished) return;
-      finished = true;
+    // Let the form POST naturally to the iframe
+    // Show success after a short delay (form has already submitted)
+    setTimeout(function() {
       form.style.display = 'none';
       success.style.display = 'block';
+    }, 1500);
 
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-
-      try {
-        delete window[callbackName];
-      } catch (e) {
-        window[callbackName] = undefined;
-      }
-    }
-
-    window[callbackName] = function(data) {
-      showSuccess();
-    };
-
-    var params =
-      '&EMAIL=' + encodeURIComponent(email) +
-      '&FNAME=' + encodeURIComponent(fname) +
-      '&MERGE1=' + encodeURIComponent(fname) +
-      '&tags=3512589' +
-      '&b_9d11a72a3736b1f1dd92fdfc9_b895da0481=' +
-      '&c=' + callbackName;
-
-    script.src = baseUrl + params;
-
-    script.onerror = function() {
-      btn.disabled = false;
-      btn.textContent = 'GET PRIORITY ACCESS';
-      alert('Something went wrong. Please try again.');
-    };
-
-    document.body.appendChild(script);
-
-    setTimeout(showSuccess, 2500);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    var fn = document.getElementById('fname').value.trim();
-    var em = document.getElementById('email').value.trim();
-
-    if (!fn || !em) {
-      alert('Please fill in your name and email.');
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    submitToMailchimp(fn, em, 'lead-form-1', 'success-box', 'submit-btn-1');
-  }
-
-  function handleSubmit2(event) {
-    event.preventDefault();
-
-    var fn = document.getElementById('fname2').value.trim();
-    var em = document.getElementById('email2').value.trim();
-
-    if (!fn || !em) {
-      alert('Please fill in your name and email.');
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    submitToMailchimp(fn, em, 'lead-form-2', 'success-box-2', 'submit-btn-2');
+    // Don't prevent default - let the native POST happen
+    return true;
   }
 </script>
 
