@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Strong Dad Reset - Priority List</title>
+<title>The Strong Dad Reset - Doors Open</title>
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -61,26 +61,16 @@
   .card-label { font-size: 10px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 10px; display: block; }
   .card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
 
-  .form-box { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-radius: 10px; padding: 28px 24px; margin: 0 auto 16px; max-width: 620px; text-align: left; }
-  .form-title { font-size: 10px; font-weight: 700; color: #9ca3af; letter-spacing: 3px; margin-bottom: 20px; display: block; }
-  .field { margin-bottom: 14px; }
-  label { display: block; font-size: 12px; color: #6b7280; margin-bottom: 6px; font-weight: 600; letter-spacing: 0.5px; }
-  input[type="text"], input[type="email"] { width: 100%; background: #000000; border: 0.5px solid #333; border-radius: 6px; padding: 14px 16px; color: #ffffff; font-size: 16px; font-family: 'Barlow', sans-serif; outline: none; -webkit-appearance: none; transition: border-color 0.2s; }
-  input::placeholder { color: #374151; }
-  input:focus { border-color: #E24B4A; }
-  .submit-btn { width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 18px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 2px; cursor: pointer; margin-top: 8px; -webkit-appearance: none; transition: background 0.2s; }
-  .submit-btn:hover { background: #c73b39; }
-  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-  .small-print { font-size: 12px; color: #374151; text-align: center; margin-top: 12px; }
-
-  .buy-now-wrap { margin: 0 auto 24px; max-width: 620px; }
-  .buy-now-btn { display: block; width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 20px 16px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 1.5px; cursor: pointer; text-align: center; text-decoration: none; }
-  .buy-now-sub { font-size: 12px; color: #6b7280; text-align: center; margin-top: 10px; }
-
-  .success { display: none; text-align: center; padding: 32px 16px; }
-  .success h2 { font-size: 26px; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
-  .success p { font-size: 15px; color: #9ca3af; line-height: 1.6; }
-  .tick { width: 52px; height: 52px; background: #E24B4A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 20px; font-weight: 900; color: #fff; }
+  .buy-box { background: #0f0f0f; border: 1px solid #E24B4A; border-radius: 10px; padding: 28px 24px; margin: 0 auto 24px; max-width: 620px; text-align: center; }
+  .buy-title { font-size: 12px; font-weight: 700; color: #E24B4A; letter-spacing: 3px; margin-bottom: 8px; display: block; }
+  .buy-headline { font-family: 'Anton', sans-serif; font-size: 28px; color: #ffffff; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .buy-sub { font-size: 14px; color: #9ca3af; margin-bottom: 24px; }
+  .buy-btn { display: block; width: 100%; background: #E24B4A; border: none; border-radius: 6px; padding: 20px 16px; color: #ffffff; font-size: 15px; font-weight: 900; font-family: 'Barlow', sans-serif; letter-spacing: 1.5px; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 12px; transition: background 0.2s; }
+  .buy-btn:hover { background: #c73b39; }
+  .buy-btn.couples { background: #000000; border: 1px solid #E24B4A; color: #E24B4A; }
+  .buy-btn.couples:hover { background: #1a1a1a; color: #ffffff; }
+  .buy-note { font-size: 12px; color: #6b7280; margin-top: 8px; line-height: 1.5; }
+  .price-strike { text-decoration: line-through; color: #6b7280; font-weight: 400; }
 
   .divider { height: 1px; background: #1a1a1a; width: 100%; }
 
@@ -106,6 +96,16 @@
   .what-card-title { font-size: 11px; font-weight: 700; color: #E24B4A; letter-spacing: 2px; margin-bottom: 12px; display: block; }
   .what-card p { font-size: 15px; color: #d1d5db; line-height: 1.7; }
 
+  .couples-section { background: #0a0a0a; padding: 64px 32px; width: 100%; }
+  .couples-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .couples-title { font-family: 'Anton', sans-serif; font-size: clamp(32px, 5vw, 48px); color: #ffffff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1; }
+  .couples-title span { color: #E24B4A; }
+  .couples-body { font-size: 16px; color: #9ca3af; line-height: 1.9; margin-bottom: 24px; text-align: left; }
+  .couples-body strong { color: #ffffff; }
+  .couples-price-box { background: #000; border: 1px solid #E24B4A; border-radius: 8px; padding: 24px; margin: 24px 0; }
+  .couples-price-headline { font-family: 'Anton', sans-serif; font-size: 32px; color: #E24B4A; margin-bottom: 4px; }
+  .couples-price-sub { font-size: 14px; color: #9ca3af; }
+
   .testi-section { width: 100%; max-width: 900px; margin: 0 auto; padding: 64px 32px; }
   .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
   .testi-card { background: #0f0f0f; border: 0.5px solid #2a2a2a; border-left: 3px solid #E24B4A; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; }
@@ -113,7 +113,7 @@
   .testi-name { font-size: 13px; color: #E24B4A; font-weight: 700; letter-spacing: 1.5px; }
 
   .bottom-form { background: #0a0a0a; padding: 72px 20px; width: 100%; border-top: 1px solid #1a1a1a; }
-  .bottom-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+  .bottom-inner { max-width: 620px; margin: 0 auto; text-align: center; }
   .bottom-title { font-family: 'Anton', sans-serif; font-size: clamp(32px, 5vw, 52px); color: #ffffff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
   .bottom-sub { font-size: 15px; color: #6b7280; margin-bottom: 36px; line-height: 1.6; }
 
@@ -132,15 +132,14 @@
     .testi-section { padding: 48px 20px; }
     .about-section { padding: 48px 20px; }
     .bottom-form { padding: 56px 20px; }
+    .couples-section { padding: 48px 20px; }
     .not-for-you { padding: 20px; }
     .urgency-bar { font-size: 13px; }
+    .buy-box { padding: 24px 20px; }
   }
 </style>
 </head>
 <body>
-
-<!-- Hidden iframe to catch Mailchimp POST response without redirect -->
-<iframe name="mc-iframe" style="display:none;"></iframe>
 
 <div class="marquee-wrap">
   <div class="marquee-track" id="marquee-track">
@@ -158,7 +157,7 @@
 
   <div class="urgency-bar">
     <span class="urgency-dot"></span>
-    PRIORITY LIST OPEN — EARLYBIRD OPENS 28TH AUGUST £97 — START DATE 7TH SEPTEMBER
+    DOORS ARE OPEN — EARLYBIRD £97 CLOSES SUNDAY MIDNIGHT — START DATE 7TH SEPTEMBER
   </div>
 
   <div class="pain-points">
@@ -179,52 +178,22 @@
   <div class="cards">
     <div class="card">
       <span class="card-label">EARLYBIRD PRICING</span>
-      <p>Priority list members get in at £97 which is £50 cheaper than the door price. Once earlybird closes on 4th September, it goes up to £147. No exceptions.</p>
+      <p>Single ticket £97 (£50 cheaper than door). Earlybird closes Sunday 30th August midnight. Monday morning it jumps to £147.</p>
     </div>
     <div class="card">
-      <span class="card-label">FIRST ACCESS</span>
-      <p>Spaces are limited. Last cohort filled fast. Priority list members get in before anyone else even knows it's open.</p>
+      <span class="card-label">DOORS SHUT FRIDAY</span>
+      <p>Doors shut fully at midnight Friday 4th September. Cohort kicks off Monday 7th September. Spaces are limited.</p>
     </div>
   </div>
 
-  <div class="buy-now-wrap" id="buy-now">
-    <div class="buy-now-btn" style="opacity:0.5; cursor:not-allowed;">JOIN THE PRIORITY LIST</div>
-    <p class="buy-now-sub">EARLYBIRD OPENS 28TH AUGUST — £97 FOR PRIORITY LIST ONLY</p>
+  <div class="buy-box">
+    <span class="buy-title">SECURE YOUR SPACE</span>
+    <h3 class="buy-headline">SINGLE — £97</h3>
+    <p class="buy-sub"><span class="price-strike">£147</span> Earlybird price. Closes Sunday midnight.</p>
+    <a href="STRIPE_SINGLE_LINK_HERE" class="buy-btn">BUY NOW — £97</a>
+    <a href="STRIPE_COUPLES_LINK_HERE" class="buy-btn couples">BRING THE MISSUS — £147</a>
+    <p class="buy-note">2 clicks in Stripe. Welcome pack in 24 hours. WhatsApp invite. Kick off Monday 7th September.</p>
   </div>
-
-  <div class="form-box">
-    <form
-      id="lead-form-1"
-      action="https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&amp;id=b895da0481&amp;f_id=003f8ce3f0"
-      method="post"
-      target="mc-iframe"
-      onsubmit="handleSubmit(event, 'lead-form-1', 'success-box', 'submit-btn-1')"
-    >
-      <span class="form-title">GET ON THE LIST</span>
-      <div class="field">
-        <label for="fname">First name</label>
-        <input type="text" name="FNAME" id="fname" placeholder="Your first name" required>
-      </div>
-      <div class="field">
-        <label for="email">Email address</label>
-        <input type="email" name="EMAIL" id="email" placeholder="Your email address" required>
-      </div>
-      <!-- Mailchimp tag and honeypot -->
-      <input type="hidden" name="tags" value="3512589">
-      <div style="position:absolute;left:-5000px;" aria-hidden="true">
-        <input type="text" name="b_9d11a72a3736b1f1dd92fdfc9_b895da0481" tabindex="-1" value="">
-      </div>
-      <button type="submit" class="submit-btn" id="submit-btn-1">JOIN THE PRIORITY LIST</button>
-    </form>
-
-    <div class="success" id="success-box">
-      <div class="tick">✓</div>
-      <h2>You're In.</h2>
-      <p>Priority access secured.<br>Keep an eye on your inbox.</p>
-    </div>
-  </div>
-
-  <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
 </div>
 
 <div class="divider"></div>
@@ -269,7 +238,7 @@
     <div class="about-text">
       <span class="section-label" style="text-align:left;">WHO'S COACHING YOU</span>
       <h2 class="about-title">I'm Leon.</h2>
-      <p class="about-body">Dad of two girls. Competitive bodybuilder. Six years coaching dads who are sick of feeling like a bag of shit and not doing anything about it.</p>
+      <p class="about-body">Dad of two girls. Competitive bodybuilder. Seven years coaching dads who are sick of feeling like a bag of shit and not doing anything about it.</p>
       <p class="about-body">I know what it's like to avoid the camera at family events. I know what it's like to put the hoodie back on at the beach. I know what it's like to be sat on the sofa next to your kids and not have the energy to actually get up and play with them.</p>
       <p class="about-body">I also know exactly what changes when you stop winging it and build a structure that actually fits your life because I've lived it.</p>
       <p class="about-body">I'm not some fitness influencer selling a lifestyle that doesn't exist for a bloke with a job, two kids and a mortgage. I'm a real dad who figured it out. No bullshit. No hard sell. No guilt trips. You either want this or you don't. i am NOT here to hold your fucking hand, you will need to put the work in and you WILL get the result you have signed up for.</p>
@@ -313,6 +282,23 @@
 
 <div class="divider"></div>
 
+<div class="couples-section">
+  <div class="couples-inner">
+    <span class="section-label">NEW FOR COHORT 2</span>
+    <h2 class="couples-title">Do it <span>together</span>.</h2>
+    <p class="couples-body">Bring your missus with you for an extra £50. Same programme. Same weekly check-ins. Both of you accountable to each other AND to me.<br><br><strong>No cooking two different dinners every night. No arguments about the food shop. No one falling off the wagon while the other one's grinding.</strong> Two of you pulling in the same direction for 8 weeks.<br><br>One-off for this cohort only. Every future cohort it's £75 extra to add her in.</p>
+
+    <div class="couples-price-box">
+      <div class="couples-price-headline">£147 FOR THE PAIR</div>
+      <div class="couples-price-sub">Earlybird closes Sunday midnight. Then £222 until Friday.</div>
+    </div>
+
+    <a href="STRIPE_COUPLES_LINK_HERE" class="buy-btn">BRING THE MISSUS — £147</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <div class="testi-section">
   <span class="section-label">WHAT THEY SAID</span>
   <h2 class="section-title">From the lads who did it.</h2>
@@ -338,47 +324,17 @@
 <div class="bottom-form">
   <div class="bottom-inner">
     <span class="section-label">READY TO RESET?</span>
-    <h2 class="bottom-title">Get on the<br><span style="color:#E24B4A;">priority list.</span></h2>
-    <p class="bottom-sub">Your missus notices. Your clothes actually fit. You've got the energy to get off the sofa and be in the garden with your kids instead of just being in the same room as them. You stop waking up every morning with that feeling of knowing you need to sort yourself out but doing fuck all about it.<br><br>Earlybird is £97. Goes up to £147 on 4th September. Get on the list.</p>
+    <h2 class="bottom-title">Get in before<br><span style="color:#E24B4A;">Sunday midnight.</span></h2>
+    <p class="bottom-sub">Your missus notices. Your clothes actually fit. You've got the energy to get off the sofa and be in the garden with your kids instead of just being in the same room as them. You stop waking up every morning with that feeling of knowing you need to sort yourself out but doing fuck all about it.<br><br>Earlybird £97 single / £147 couples. Sunday midnight it jumps to £147 / £222. Doors shut Friday 4th September.</p>
 
-    <div class="buy-now-wrap">
-      <div class="buy-now-btn" style="opacity:0.5; cursor:not-allowed;">JOIN THE PRIORITY LIST</div>
-      <p class="buy-now-sub">EARLYBIRD OPENS 28TH AUGUST — £97 FOR PRIORITY LIST ONLY</p>
+    <div class="buy-box">
+      <span class="buy-title">SECURE YOUR SPACE</span>
+      <h3 class="buy-headline">SINGLE — £97</h3>
+      <p class="buy-sub"><span class="price-strike">£147</span> Earlybird price. Closes Sunday midnight.</p>
+      <a href="STRIPE_SINGLE_LINK_HERE" class="buy-btn">BUY NOW — £97</a>
+      <a href="STRIPE_COUPLES_LINK_HERE" class="buy-btn couples">BRING THE MISSUS — £147</a>
+      <p class="buy-note">2 clicks in Stripe. Welcome pack in 24 hours. WhatsApp invite. Kick off Monday 7th September.</p>
     </div>
-
-    <div class="form-box">
-      <form
-        id="lead-form-2"
-        action="https://lookgoodfitness.us5.list-manage.com/subscribe/post?u=9d11a72a3736b1f1dd92fdfc9&amp;id=b895da0481&amp;f_id=003f8ce3f0"
-        method="post"
-        target="mc-iframe"
-        onsubmit="handleSubmit(event, 'lead-form-2', 'success-box-2', 'submit-btn-2')"
-      >
-        <span class="form-title">SECURE YOUR SPOT</span>
-        <div class="field">
-          <label for="fname2">First name</label>
-          <input type="text" name="FNAME" id="fname2" placeholder="Your first name" required>
-        </div>
-        <div class="field">
-          <label for="email2">Email address</label>
-          <input type="email" name="EMAIL" id="email2" placeholder="Your email address" required>
-        </div>
-        <!-- Mailchimp tag and honeypot -->
-        <input type="hidden" name="tags" value="3512589">
-        <div style="position:absolute;left:-5000px;" aria-hidden="true">
-          <input type="text" name="b_9d11a72a3736b1f1dd92fdfc9_b895da0481" tabindex="-1" value="">
-        </div>
-        <button type="submit" class="submit-btn" id="submit-btn-2">JOIN THE PRIORITY LIST</button>
-      </form>
-
-      <div class="success" id="success-box-2">
-        <div class="tick">✓</div>
-        <h2>You're In.</h2>
-        <p>Priority access secured.<br>Keep an eye on your inbox.</p>
-      </div>
-    </div>
-
-    <p class="small-print">No spam. No faff. Just the details you need, when you need them.</p>
   </div>
 </div>
 
@@ -402,28 +358,6 @@
       requestAnimationFrame(step);
     });
   })();
-
-  // Form submission - direct POST to Mailchimp via hidden iframe
-  // No JavaScript trickery - the form POSTs natively, iframe catches the response
-  // This is the most reliable method for capturing all fields including FNAME
-  function handleSubmit(event, formId, successId, btnId) {
-    var btn = document.getElementById(btnId);
-    var form = document.getElementById(formId);
-    var success = document.getElementById(successId);
-
-    btn.disabled = true;
-    btn.textContent = 'ADDING YOU TO THE LIST...';
-
-    // Let the form POST naturally to the iframe
-    // Show success after a short delay (form has already submitted)
-    setTimeout(function() {
-      form.style.display = 'none';
-      success.style.display = 'block';
-    }, 1500);
-
-    // Don't prevent default - let the native POST happen
-    return true;
-  }
 </script>
 
 </body>
